@@ -7,6 +7,9 @@ header {
   color: white;
   padding-left: 1rem;
   font-weight: 100;
+  font-family: "Proza Libre", serif;
+  font-style: normal;
+  letter-spacing: 1.3px;
 }
 
 .user-entry {
@@ -15,6 +18,8 @@ header {
 }
 
 .user-entry h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -23,7 +28,6 @@ header {
   padding: 0.5rem 0;
   width: 100%;
   border-radius: 1rem;
-  border: 0 solid transparent;
 }
 
 .user-entry label,
@@ -34,6 +38,7 @@ header {
 }
 
 .user-entry label {
+  font-family: "Open Sans", sans-serif;
   padding-top: 1.5rem;
   padding-bottom: 0.5rem;
 }
@@ -98,5 +103,13 @@ header {
   .user-entry input {
     margin-bottom: 2rem;
     padding: 0.5rem;
+  }
+
+  #submit {
+    cursor: pointer;
+  }
+
+  #submit:active {
+    transform: translateY(0.25rem);
   }
 }
