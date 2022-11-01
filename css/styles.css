@@ -1,45 +1,39 @@
+html {
+  background-color: #f0f0f0;
+}
+
 header {
   background-color: #562a81;
-  padding: 2px;
 }
 
 .header h3 {
   color: white;
-  padding-left: 1rem;
   font-weight: 100;
   font-family: "Proza Libre", serif;
   font-style: normal;
   letter-spacing: 1.3px;
 }
 
-.user-entry {
-  background-color: #f0f0f0;
-  padding: 1rem;
-}
-
 .user-entry h2 {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
-  margin: 0;
 }
 
 .user-entry img {
-  display: block;
-  padding: 0.5rem 0;
   width: 100%;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
 
 .user-entry label,
 .user-entry input,
 .user-entry textarea {
-  display: block;
+  display: inline-block;
   width: 100%;
 }
 
 .user-entry label {
   font-family: "Open Sans", sans-serif;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
   padding-bottom: 0.5rem;
 }
 
@@ -51,65 +45,15 @@ header {
 }
 
 .user-entry button {
-  display: block;
   margin: 1rem 0;
   background-color: #562a81;
   color: white;
-  padding: 0.3rem 01rem;
+  padding: 0.3rem 1rem;
   border-color: transparent;
   border-radius: 0.3rem;
 }
 
-.form-actions {
+.form-submit {
   display: flex;
   justify-content: flex-end;
-}
-
-@media only screen and (min-width: 580px) {
-  body {
-    background-color: #f0f0f0;
-  }
-
-  .header {
-    width: 70%;
-    margin: auto;
-  }
-
-  .user-entry {
-    width: 70%;
-    margin: auto;
-  }
-
-  .flex {
-    display: flex;
-  }
-
-  .input {
-    padding: 0 1rem;
-  }
-
-  .user-entry img {
-    display: inline-block;
-    width: 50%;
-  }
-
-  .user-entry label,
-  .user-entry input {
-    display: inline-block;
-    width: 100%;
-    padding-top: 0.4rem;
-  }
-
-  .user-entry input {
-    margin-bottom: 2rem;
-    padding: 0.5rem;
-  }
-
-  #submit {
-    cursor: pointer;
-  }
-
-  #submit:active {
-    transform: translateY(0.25rem);
-  }
 }

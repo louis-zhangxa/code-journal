@@ -6,3 +6,11 @@ var data = {
   editing: null,
   nextEntryId: 1
 };
+
+function storeDataInLocalStorage(event) {
+  var dataJSON = JSON.stringify(data);
+  localStorage.setItem('javascript-local-storage', dataJSON);
+}
+
+var $submit = document.querySelector('form');
+$submit.addEventListener('submit', storeDataInLocalStorage);

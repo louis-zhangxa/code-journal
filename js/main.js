@@ -1,18 +1,9 @@
 var $photoUrl = document.querySelector('#PhotoURL');
 var $userIMG = document.querySelector('#user-image');
+
 var $Title = document.querySelector('#Title');
 var $Notes = document.querySelector('#Notes');
-var $submit = document.querySelector('#submit');
-
-var url = $photoUrl.addEventListener('input', function (event) {
-  url = event.target.value;
-});
-var title = $Title.addEventListener('input', function (event) {
-  title = event.target.value;
-});
-var notes = $Notes.addEventListener('input', function (event) {
-  notes = event.target.value;
-});
+var $submit = document.querySelector('form');
 
 $photoUrl.addEventListener('input', function (event) {
   $userIMG.setAttribute('src', event.target.value);
@@ -23,19 +14,15 @@ $photoUrl.addEventListener('input', function (event) {
 );
 
 function submitNote(event) {
+  event.preventDefault();
   var userNote = {
-    Title: title,
-    PhotoUrl: url,
-    Notes: notes
+    Title: $Title.value,
+    PhotoUrl: $photoUrl.value,
+    Notes: $Notes.value,
+    ID: data.nextEntryId++
   };
-  data.entries.push(userNote);
-  data.nextEntryId++;
+  data.entries.unshift(userNote);
+  $submit.reset();
 }
 
-function string(event) {
-  var dataJSON = JSON.stringify(data);
-  localStorage.setItem('javascript-local-storage', dataJSON);
-}
-
-$submit.addEventListener('click', submitNote);
-$submit.addEventListener('click', string);
+$submit.addEventListener('submit', submitNote);
