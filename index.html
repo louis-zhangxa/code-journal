@@ -17,8 +17,30 @@
 </head>
 <body>
   <header>
+    <div class="header">
+      <h3>Code Journel</h3>
+    </div>
   </header>
   <main>
+    <div data-view="entry-form">
+      <form action="" class="user-entry">
+        <h2>New Entry</h2>
+        <div class="flex">
+          <img src="images/placeholder-image-square.jpg" alt="placeholder" id="user-image">
+          <div class="input">
+            <label for="Title">Title</label>
+            <input required type="text" name="Title" id="Title">
+            <label for="PhotoURL">PhotoURL</label>
+            <input required type="URL" name="PhotoURL" id="PhotoURL">
+          </div>
+        </div>
+        <label for="Notes">Notes</label>
+        <textarea required name="Notes" id="Notes" cols="20" rows="10"></textarea>
+        <div class="form-actions">
+          <button type="submit" id="submit">SAVE</button>
+        </div>
+      </form>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
