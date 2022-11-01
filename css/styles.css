@@ -52,10 +52,10 @@ header {
 
 .user-entry button {
   display: block;
-  margin: 1rem;
+  margin: 1rem 0;
   background-color: #562a81;
   color: white;
-  padding: 0.3rem 1rem;
+  padding: 0.3rem 01rem;
   border-color: transparent;
   border-radius: 0.3rem;
 }
