@@ -30,7 +30,6 @@ function submitNote(event) {
   };
   data.entries.push(userNote);
   data.nextEntryId++;
-  event.preventDefault();
 }
 
 function string(event) {
