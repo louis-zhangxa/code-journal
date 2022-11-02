@@ -19,7 +19,8 @@ header {
   font-weight: 600;
 }
 
-.user-entry img {
+.user-entry img,
+.entries img {
   width: 100%;
   border-radius: 0.5rem;
 }
@@ -56,4 +57,9 @@ header {
 .form-submit {
   display: flex;
   justify-content: flex-end;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
