@@ -10,7 +10,7 @@ var data = {
 function storeDataInLocalStorage(event) {
   var dataJSON = JSON.stringify(data);
   localStorage.setItem('javascript-local-storage', dataJSON);
+
 }
 
-var $submit = document.querySelector('form');
-$submit.addEventListener('beforeunload', storeDataInLocalStorage);
+window.addEventListener('beforeunload', storeDataInLocalStorage);
