@@ -13,4 +13,4 @@ function storeDataInLocalStorage(event) {
 }
 
 var $submit = document.querySelector('form');
-$submit.addEventListener('submit', storeDataInLocalStorage);
+$submit.addEventListener('beforeunload', storeDataInLocalStorage);
