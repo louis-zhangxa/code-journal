@@ -14,11 +14,44 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
+    <div class="container">
+      <div class="row">
+        <div class="column-full header">
+          <h3>Code Journal</h3>
+        </div>
+      </div>
+    </div>
   </header>
   <main>
+    <div data-view="entry-form" class="container user-entry">
+      <form action="" class="row">
+        <div class="column-full">
+          <h2>New Entry</h2>
+        </div>
+        <div class="column-half">
+          <img src="images/placeholder-image-square.jpg" alt="placeholder" id="user-image">
+        </div>
+        <div class="column-half">
+          <label for="Title">Title</label>
+          <input required type="text" name="Title" id="Title">
+          <label for="PhotoURL">Photo URL</label>
+          <input required type="URL" name="PhotoURL" id="PhotoURL">
+        </div>
+        <div class="column-full">
+          <label for="Notes">Notes</label>
+          <textarea required name="Notes" id="Notes" cols="20" rows="10"></textarea>
+        </div>
+        <div class="column-full form-submit">
+          <button type="submit" id="submit">SAVE</button>
+        </div>
+      </form>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

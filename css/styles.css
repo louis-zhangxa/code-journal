@@ -1,0 +1,59 @@
+html {
+  background-color: #f0f0f0;
+}
+
+header {
+  background-color: #562a81;
+}
+
+.header h3 {
+  color: white;
+  font-weight: 100;
+  font-family: "Proza Libre", serif;
+  font-style: normal;
+  letter-spacing: 1.3px;
+}
+
+.user-entry h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+.user-entry img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.user-entry label,
+.user-entry input,
+.user-entry textarea {
+  display: inline-block;
+  width: 100%;
+}
+
+.user-entry label {
+  font-family: "Open Sans", sans-serif;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.user-entry input,
+.user-entry textarea {
+  border: 1px solid #c5c6c5;
+  border-radius: 0.2rem;
+  padding: 0.3rem;
+}
+
+.user-entry button {
+  margin: 1rem 0;
+  background-color: #562a81;
+  color: white;
+  padding: 0.3rem 1rem;
+  border-color: transparent;
+  border-radius: 0.3rem;
+}
+
+.form-submit {
+  display: flex;
+  justify-content: flex-end;
+}
