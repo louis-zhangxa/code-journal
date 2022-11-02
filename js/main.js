@@ -22,6 +22,7 @@ function submitNote(event) {
     ID: data.nextEntryId++
   };
   data.entries.unshift(userNote);
+  $userIMG.setAttribute('src', 'images/placeholder-image-square.jpg');
   $submit.reset();
 }
 
