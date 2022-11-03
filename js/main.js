@@ -34,6 +34,7 @@ function renderEntries(data) {
 
   var $row = document.createElement('div');
   $row.setAttribute('class', 'row list-item');
+  $row.setAttribute('data-entry-id', data.ID);
 
   var $columnHalfImg = document.createElement('div');
   $columnHalfImg.setAttribute('class', 'column-half');
