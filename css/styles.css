@@ -36,7 +36,7 @@ header {
 .user-entry img,
 .entries img {
   width: 100%;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
 }
 
 .user-entry label,
@@ -79,6 +79,7 @@ ul {
 }
 
 .new-entries {
+  padding: 0 0.75rem;
   justify-content: space-between;
   align-items: center;
 }
@@ -107,11 +108,17 @@ ul {
   font-weight: 400;
 }
 
+.list-item {
+  margin: 1rem;
+}
+
 .list-text {
   margin: 0 auto;
 }
 
-.entries img {
-  height: 100%;
-  object-fit: cover;
+@media screen and (min-width: 768px) {
+  .entries img {
+    height: 402px;
+    object-fit: cover;
+  }
 }

@@ -1,11 +1,8 @@
 var $photoUrl = document.querySelector('#PhotoURL');
 var $userIMG = document.querySelector('#user-image');
-
 var $Title = document.querySelector('#Title');
 var $Notes = document.querySelector('#Notes');
 var $submit = document.querySelector('form');
-var $main = document.querySelector('main');
-// var $Entries = document.querySelector('#Entries');
 var $emptyPlaceholder = document.querySelector('.empty-placeholder');
 
 $photoUrl.addEventListener('input', function (event) {
@@ -25,17 +22,18 @@ function submitNote(event) {
     ID: data.nextEntryId++
   };
   data.entries.unshift(userNote);
+  $NoteContent.prepend(renderEntries(userNote));
   $userIMG.setAttribute('src', 'images/placeholder-image-square.jpg');
+  if (data.entries.length !== 0) {
+    $emptyPlaceholder.setAttribute('class', 'row empty-placeholder hidden');
+  }
   $submit.reset();
 }
 
 function renderEntries(data) {
-  var $container = document.createElement('div');
-  $container.setAttribute('data-view', 'entries');
-  $container.setAttribute('class', 'container entries');
 
   var $row = document.createElement('div');
-  $row.setAttribute('class', 'row');
+  $row.setAttribute('class', 'row list-item');
 
   var $columnHalfImg = document.createElement('div');
   $columnHalfImg.setAttribute('class', 'column-half');
@@ -57,7 +55,6 @@ function renderEntries(data) {
   var $p = document.createElement('p');
   $p.textContent = data.Notes;
 
-  $container.appendChild($row);
   $row.appendChild($columnHalfImg);
   $columnHalfImg.appendChild($img);
   $row.appendChild($ul);
@@ -66,18 +63,30 @@ function renderEntries(data) {
   $ul.appendChild($li);
   $li.appendChild($p);
 
-  return $container;
+  return $row;
 }
 
+var $NoteContent = document.querySelector('.content');
 function appendToPage(event) {
   for (var i = 0; i < data.entries.length; i++) {
-    $main.appendChild(renderEntries(data.entries[i]));
+    $NoteContent.appendChild(renderEntries(data.entries[i]));
   }
 }
 
-if (data.entries !== null) {
-  $emptyPlaceholder.setAttribute('class', 'row empty-placeholder hidden');
-}
+var $EntriesSwitch = document.querySelector('#Entries-switch');
+var $NEW = document.querySelector('#entry-form-switch');
+var $entryForm = document.querySelector('.user-entry');
+var $Entries = document.querySelector('.entries');
+
+$EntriesSwitch.addEventListener('click', function (event) {
+  $Entries.setAttribute('class', 'container entries');
+  $entryForm.setAttribute('class', 'container user-entry hidden');
+});
+
+$NEW.addEventListener('click', function (event) {
+  $Entries.setAttribute('class', 'container entries hidden');
+  $entryForm.setAttribute('class', 'container user-entry');
+});
 
 window.addEventListener('DOMContentLoaded', appendToPage);
 $submit.addEventListener('submit', submitNote);
