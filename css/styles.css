@@ -63,3 +63,16 @@ ul {
   list-style: none;
   padding: 0;
 }
+
+.list-text {
+  margin: 0 auto;
+}
+
+.entries {
+  margin-top: 2rem;
+}
+
+.entries img {
+  height: 100%;
+  object-fit: cover;
+}
