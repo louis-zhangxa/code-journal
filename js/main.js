@@ -5,6 +5,8 @@ var $Title = document.querySelector('#Title');
 var $Notes = document.querySelector('#Notes');
 var $submit = document.querySelector('form');
 var $main = document.querySelector('main');
+// var $Entries = document.querySelector('#Entries');
+var $emptyPlaceholder = document.querySelector('.empty-placeholder');
 
 $photoUrl.addEventListener('input', function (event) {
   $userIMG.setAttribute('src', event.target.value);
@@ -65,13 +67,16 @@ function renderEntries(data) {
   $li.appendChild($p);
 
   return $container;
-  // console.log($container);
 }
 
 function appendToPage(event) {
   for (var i = 0; i < data.entries.length; i++) {
     $main.appendChild(renderEntries(data.entries[i]));
   }
+}
+
+if (data.entries !== null) {
+  $emptyPlaceholder.setAttribute('class', 'row empty-placeholder hidden');
 }
 
 window.addEventListener('DOMContentLoaded', appendToPage);

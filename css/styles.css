@@ -7,11 +7,25 @@ header {
 }
 
 .header h3 {
+  display: inline-block;
   color: white;
   font-weight: 100;
   font-family: "Proza Libre", serif;
   font-style: normal;
-  letter-spacing: 1.3px;
+  letter-spacing: 1px;
+}
+
+.header nav {
+  display: inline-block;
+}
+
+.header a {
+  text-decoration: none;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  padding-left: 0.5rem;
 }
 
 .user-entry h2 {
@@ -64,12 +78,37 @@ ul {
   padding: 0;
 }
 
-.list-text {
-  margin: 0 auto;
+.new-entries {
+  justify-content: space-between;
+  align-items: center;
 }
 
-.entries {
-  margin-top: 2rem;
+.column-auto h2 {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.column-auto a {
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem 0.8rem;
+  background-color: #562a81;
+  border-radius: 0.2rem;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+}
+
+.empty-placeholder {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.list-text {
+  margin: 0 auto;
 }
 
 .entries img {
