@@ -126,4 +126,8 @@ ul {
     height: 402px;
     object-fit: cover;
   }
+
+  i {
+    cursor: pointer;
+  }
 }

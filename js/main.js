@@ -111,6 +111,14 @@ function staySamePage(event) {
   }
 }
 
+$NoteContent.addEventListener('click', function (event) {
+  if (event.target.className === 'fa-solid fa-pen column-auto') {
+    $Entries.setAttribute('class', 'container entries hidden');
+    $entryForm.setAttribute('class', 'container user-entry');
+    data.view = 'entry-form';
+  }
+});
+
 window.addEventListener('DOMContentLoaded', staySamePage);
 window.addEventListener('DOMContentLoaded', appendToPage);
 $submit.addEventListener('submit', submitNote);
