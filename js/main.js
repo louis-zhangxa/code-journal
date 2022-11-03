@@ -116,7 +116,16 @@ $NoteContent.addEventListener('click', function (event) {
     $Entries.setAttribute('class', 'container entries hidden');
     $entryForm.setAttribute('class', 'container user-entry');
     data.view = 'entry-form';
-    data.editing = event.target.closest('.list-item').getAttribute('data-entry-id');
+    var dataEntryID = event.target.closest('.list-item').getAttribute('data-entry-id');
+    data.editing = Number(dataEntryID);
+    for (var i = 0; i < data.entries.length; i++) {
+      if (data.entries[i].ID === data.editing) {
+        $Title.value = data.entries[i].Title;
+        $photoUrl.value = data.entries[i].PhotoUrl;
+        $userIMG.setAttribute('src', $photoUrl.value);
+        $Notes.value = data.entries[i].Notes;
+      }
+    }
   }
 });
 
