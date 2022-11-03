@@ -116,6 +116,7 @@ $NoteContent.addEventListener('click', function (event) {
     $Entries.setAttribute('class', 'container entries hidden');
     $entryForm.setAttribute('class', 'container user-entry');
     data.view = 'entry-form';
+    data.editing = event.target.closest('.list-item').getAttribute('data-entry-id');
   }
 });
 
