@@ -7,11 +7,25 @@ header {
 }
 
 .header h3 {
+  display: inline-block;
   color: white;
   font-weight: 100;
   font-family: "Proza Libre", serif;
   font-style: normal;
-  letter-spacing: 1.3px;
+  letter-spacing: 1px;
+}
+
+.header nav {
+  display: inline-block;
+}
+
+.header a {
+  text-decoration: none;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  padding-left: 0.5rem;
 }
 
 .user-entry h2 {
@@ -19,9 +33,10 @@ header {
   font-weight: 600;
 }
 
-.user-entry img {
+.user-entry img,
+.entries img {
   width: 100%;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
 }
 
 .user-entry label,
@@ -56,4 +71,54 @@ header {
 .form-submit {
   display: flex;
   justify-content: flex-end;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.new-entries {
+  padding: 0 0.75rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.column-auto h2 {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.column-auto a {
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem 0.8rem;
+  background-color: #562a81;
+  border-radius: 0.2rem;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+}
+
+.empty-placeholder {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.list-item {
+  margin: 1rem;
+}
+
+.list-text {
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .entries img {
+    height: 402px;
+    object-fit: cover;
+  }
 }
