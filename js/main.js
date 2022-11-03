@@ -73,6 +73,10 @@ function appendToPage(event) {
   }
 }
 
+if (data.entries.length !== 0) {
+  $emptyPlaceholder.setAttribute('class', 'row empty-placeholder hidden');
+}
+
 var $EntriesSwitch = document.querySelector('#Entries-switch');
 var $NEW = document.querySelector('#entry-form-switch');
 var $entryForm = document.querySelector('.user-entry');
@@ -81,12 +85,25 @@ var $Entries = document.querySelector('.entries');
 $EntriesSwitch.addEventListener('click', function (event) {
   $Entries.setAttribute('class', 'container entries');
   $entryForm.setAttribute('class', 'container user-entry hidden');
+  data.view = 'entries';
 });
 
 $NEW.addEventListener('click', function (event) {
   $Entries.setAttribute('class', 'container entries hidden');
   $entryForm.setAttribute('class', 'container user-entry');
+  data.view = 'entry-form';
 });
 
+function staySamePage(event) {
+  if (data.view === 'entry-form') {
+    $entryForm.setAttribute('class', 'container user-entry ');
+    $Entries.setAttribute('class', 'container entries hidden');
+  } else if (data.view === 'entries') {
+    $Entries.setAttribute('class', 'container entries');
+    $entryForm.setAttribute('class', 'container user-entry hidden');
+  }
+}
+
+window.addEventListener('DOMContentLoaded', staySamePage);
 window.addEventListener('DOMContentLoaded', appendToPage);
 $submit.addEventListener('submit', submitNote);

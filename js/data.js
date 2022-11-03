@@ -10,7 +10,6 @@ var data = {
 function storeDataInLocalStorage(event) {
   var dataJSON = JSON.stringify(data);
   localStorage.setItem('javascript-local-storage', dataJSON);
-
 }
 
 var previousDataJson = localStorage.getItem('javascript-local-storage');
