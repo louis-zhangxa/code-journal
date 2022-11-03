@@ -46,9 +46,14 @@ function renderEntries(data) {
   $ul.setAttribute('class', 'column-half list-text');
 
   var $liH2 = document.createElement('li');
+  $liH2.setAttribute('class', 'row icon');
 
   var $h2 = document.createElement('h2');
   $h2.textContent = data.Title;
+  $h2.setAttribute('class', 'column-auto');
+
+  var $icon = document.createElement('i');
+  $icon.setAttribute('class', 'fa-solid fa-pen column-auto');
 
   var $li = document.createElement('li');
 
@@ -60,6 +65,7 @@ function renderEntries(data) {
   $row.appendChild($ul);
   $ul.appendChild($liH2);
   $liH2.appendChild($h2);
+  $liH2.appendChild($icon);
   $ul.appendChild($li);
   $li.appendChild($p);
 
