@@ -148,6 +148,17 @@ function staySamePage(event) {
 }
 
 var $page = document.querySelector('#page');
+var $deleteContent = document.querySelector('#delete');
+var $pop = document.querySelector('.column-pop');
+var $no = document.querySelector('.no');
+
+$deleteContent.addEventListener('click', function (event) {
+  $pop.className = 'column-pop';
+});
+
+$no.addEventListener('click', function (event) {
+  $pop.className = 'column-pop hidden';
+});
 
 $NoteContent.addEventListener('click', function (event) {
   if (event.target.className === 'fa-solid fa-pen column-auto') {
