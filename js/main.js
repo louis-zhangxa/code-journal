@@ -151,6 +151,7 @@ var $page = document.querySelector('#page');
 var $deleteContent = document.querySelector('#delete');
 var $pop = document.querySelector('.column-pop');
 var $no = document.querySelector('.no');
+var $yes = document.querySelector('.yes');
 
 $deleteContent.addEventListener('click', function (event) {
   $pop.className = 'column-pop';
@@ -178,6 +179,30 @@ $NoteContent.addEventListener('click', function (event) {
         $Notes.value = data.entries[i].Notes;
       }
     }
+  }
+});
+
+$yes.addEventListener('click', function (event) {
+  for (var i = 0; i < data.entries.length; i++) {
+    if (data.entries[i].ID === data.editing) {
+      data.entries.splice(0, 1);
+      break;
+    }
+  }
+  var $li = document.querySelectorAll('li');
+  for (var j = 0; j < $li.length; j++) {
+    if (Number($li[j].getAttribute('data-entry-id')) === data.editing) {
+      $NoteContent.removeChild($li[j]);
+      break;
+    }
+  }
+  $Entries.setAttribute('class', 'container entries');
+  $entryForm.setAttribute('class', 'container user-entry hidden');
+  data.view = 'entries';
+  $pop.className = 'column-pop hidden';
+  data.editing = null;
+  if (data.entries.length === 0 || null) {
+    $emptyPlaceholder.setAttribute('class', 'row empty-placeholder');
   }
 });
 
