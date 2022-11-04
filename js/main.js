@@ -113,6 +113,8 @@ var $EntriesSwitch = document.querySelector('#Entries-switch');
 var $NEW = document.querySelector('#entry-form-switch');
 var $entryForm = document.querySelector('.user-entry');
 var $Entries = document.querySelector('.entries');
+var $delete = document.querySelector('.delete');
+var $formSubmit = document.querySelector('.form-submit');
 
 $EntriesSwitch.addEventListener('click', function (event) {
   $Entries.setAttribute('class', 'container entries');
@@ -124,8 +126,11 @@ $EntriesSwitch.addEventListener('click', function (event) {
 $NEW.addEventListener('click', function (event) {
   $Entries.setAttribute('class', 'container entries hidden');
   $entryForm.setAttribute('class', 'container user-entry');
+  $delete.setAttribute('class', 'column-auto delete hidden');
+  $formSubmit.className = 'form-submit';
   data.view = 'entry-form';
   data.editing = null;
+  $page.textContent = 'New Entry';
   $userIMG.setAttribute('src', 'images/placeholder-image-square.jpg');
   $photoUrl.value = null;
   $Title.value = null;
@@ -142,11 +147,16 @@ function staySamePage(event) {
   }
 }
 
+var $page = document.querySelector('#page');
+
 $NoteContent.addEventListener('click', function (event) {
   if (event.target.className === 'fa-solid fa-pen column-auto') {
     $Entries.setAttribute('class', 'container entries hidden');
     $entryForm.setAttribute('class', 'container user-entry');
+    $delete.setAttribute('class', 'column-auto delete');
+    $formSubmit.className = 'column-auto';
     data.view = 'entry-form';
+    $page.textContent = 'Edit Entries';
     var dataEntryID = event.target.closest('.column-full').getAttribute('data-entry-id');
     data.editing = Number(dataEntryID);
     for (var i = 0; i < data.entries.length; i++) {
