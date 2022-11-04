@@ -116,9 +116,18 @@ ul {
   margin: 0 auto;
 }
 
+.icon {
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media screen and (min-width: 768px) {
   .entries img {
     height: 402px;
     object-fit: cover;
+  }
+
+  i {
+    cursor: pointer;
   }
 }
